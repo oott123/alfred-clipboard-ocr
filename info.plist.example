@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.oott123.alfred.clipboard.ocr</string>
+	<key>category</key>
+	<string>Productivity</string>
+	<key>connections</key>
+	<dict>
+		<key>22CAE27E-42AE-447B-BE53-6C897CD8AD1C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F257A671-46A1-49AA-A430-8D73E8E628B9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>40AEA484-9716-45C2-B627-35208FA951E0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>22CAE27E-42AE-447B-BE53-6C897CD8AD1C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>oott123</string>
+	<key>description</key>
+	<string>Use Baidu OCR API to covert your clipboard image to text.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>OCR Clipboard</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{var:content}</string>
+				<key>title</key>
+				<string>{var:title}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>F257A671-46A1-49AA-A430-8D73E8E628B9</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>ruby ocr.rb</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>./ocr.rb</string>
+				<key>type</key>
+				<integer>8</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>22CAE27E-42AE-447B-BE53-6C897CD8AD1C</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>ocr</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>OCR Clipboard</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>40AEA484-9716-45C2-B627-35208FA951E0</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>This workflow use Baidu Cloud OCR API convert images on your clipboard to text.
+
+Grab a api key and secret from https://console.bce.baidu.com/ai/#/ai/ocr/overview/index , and then fill it in `Workflow Enviornment Variables`. 
+Take a screenshot and/or copy an image to clipboard. Use keyword `ocr` to get it by text.
+
+Icon made by FreePik from www.flaticon.com.</string>
+	<key>uidata</key>
+	<dict>
+		<key>22CAE27E-42AE-447B-BE53-6C897CD8AD1C</key>
+		<dict>
+			<key>xpos</key>
+			<integer>230</integer>
+			<key>ypos</key>
+			<integer>150</integer>
+		</dict>
+		<key>40AEA484-9716-45C2-B627-35208FA951E0</key>
+		<dict>
+			<key>xpos</key>
+			<integer>70</integer>
+			<key>ypos</key>
+			<integer>150</integer>
+		</dict>
+		<key>F257A671-46A1-49AA-A430-8D73E8E628B9</key>
+		<dict>
+			<key>xpos</key>
+			<integer>380</integer>
+			<key>ypos</key>
+			<integer>150</integer>
+		</dict>
+	</dict>
+	<key>variables</key>
+	<dict>
+		<key>bce_api_key</key>
+		<string></string>
+		<key>bce_api_secret</key>
+		<string></string>
+	</dict>
+	<key>variablesdontexport</key>
+	<array>
+		<string>bce_api_secret</string>
+		<string>bce_api_key</string>
+	</array>
+	<key>version</key>
+	<string>0.1.0</string>
+	<key>webaddress</key>
+	<string>https://oott123.github.io/alfred-clipboard-ocr</string>
+</dict>
+</plist>
