@@ -112,7 +112,12 @@
 		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string>This workflow use Baidu Cloud OCR API convert images on your clipboard to text.
+
+Grab a api key and secret from https://console.bce.baidu.com/ai/#/ai/ocr/overview/index , and then fill it in `Workflow Enviornment Variables`. 
+Take a screenshot and/or copy an image to clipboard. Use keyword `ocr` to get it by text.
+
+Icon made by FreePik from www.flaticon.com.</string>
 	<key>uidata</key>
 	<dict>
 		<key>22CAE27E-42AE-447B-BE53-6C897CD8AD1C</key>
@@ -150,7 +155,7 @@
 		<string>bce_api_key</string>
 	</array>
 	<key>version</key>
-	<string></string>
+	<string>0.1.0</string>
 	<key>webaddress</key>
 	<string>https://oott123.github.io/alfred-clipboard-ocr</string>
 </dict>
