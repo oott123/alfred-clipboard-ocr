@@ -27,6 +27,10 @@
 
 AGPLv3
 
-### 开源软件使用许可
+#### 开源软件使用许可
 
 [pngpaste](./pngpaste/LICENSE)
+
+#### 图标授权 (Icon Credit)
+
+Icon made by [Freepik](http://www.freepik.com) from [www.flaticon.com](https://www.flaticon.com/).
