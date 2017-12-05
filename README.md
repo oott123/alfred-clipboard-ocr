@@ -4,7 +4,7 @@
 
 ![演示动画](./assets/demo.gif)
 
-<center><small>感谢：V2EX, Firefox, Snipaste, CotEditor 在上图中的出场（排名不分先后）</small></center>
+<p align="center">感谢：V2EX, Firefox, Snipaste, CotEditor 在上图中的出场（排名不分先后）</p>
 
 ## 安装方法
 
