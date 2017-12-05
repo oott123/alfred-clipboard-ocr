@@ -29,15 +29,23 @@ def dump_clipboard_image
     content
 end
 
+$credentials_file_folder = (ENV['alfred_workflow_data'] or ENV['HOME'])
+$credentials_file_path = $credentials_file_folder + '/.alfred_ocr_credentials'
+
+def clear_credentials
+    begin
+        FileUtils.rm $credentials_file_path
+    rescue
+    end
+end
+
 def get_credentials
     credentials = {}
-    credentials_file_folder = (ENV['alfred_workflow_data'] or ENV['HOME'])
-    FileUtils.mkdir_p credentials_file_folder
-    credentials_file_path = credentials_file_folder + '/.alfred_ocr_credentials'
+    FileUtils.mkdir_p $credentials_file_folder
     api_key = ENV['bce_api_key']
     api_secret = ENV['bce_api_secret']
     begin
-        File.open(credentials_file_path, 'r') do |file|
+        File.open($credentials_file_path, 'r') do |file|
             credentials = Marshal.load file
         end
         if credentials['expires_at'] < Time.now
@@ -59,7 +67,7 @@ def get_credentials
         raise 'Credentials incorrect' unless credentials['expires_in']
         credentials['expires_at'] = Time.now + credentials['expires_in']
     end
-    File.open(credentials_file_path, 'w') do |file|
+    File.open($credentials_file_path, 'w') do |file|
         file.write(Marshal.dump credentials)
     end
     credentials
@@ -99,7 +107,15 @@ end
 begin
     image_base64 = dump_clipboard_image
     credentials = get_credentials
-    result = ocr_text image_base64, credentials
+    result = ''
+    times = 0
+    begin
+        result = ocr_text image_base64, credentials
+    rescue
+        clear_credentials
+        times += 1
+        retry if times <= 1
+    end
     Open3.popen3( 'pbcopy' ){ |input, _, _| input << result }
     generate_json({
         'title' => 'Text Copied',
@@ -110,5 +126,6 @@ rescue Exception => e
         'title' => 'OCR Clipboard Error',
         'content' => "#{e.message}"
     })
-    STDERR.p e
+    STDERR.puts e
+    STDERR.puts e.trace
 end
