@@ -9,8 +9,6 @@ require 'cgi'
 require 'fileutils'
 require 'open3'
 
-require_relative './clipboard'
-
 def dump_clipboard_image
     content = ''
     file = Tempfile.new ['alfred_ocr', '.jpg']
