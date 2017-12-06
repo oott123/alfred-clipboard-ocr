@@ -23,6 +23,25 @@
 
 识别后的文字会自动复制到你的剪贴板中。识别并复制成功后，Alfred 会弹出桌面通知提醒你。
 
+## 常见问题
+
+### 开了代理就报错
+
+常见的错误有：
+
+* Bad URI
+* Method Not Allowed
+* Request Failed
+
+遇到此类问题请先尝试关闭代理确认是否为代理问题。若确认是代理问题而又不希望关闭代理软件的，可以在 Workflow Environment Variables 一栏增加两个变量如下：
+
+| Name         | Value | Don't Export |
+| ------------ | ----- | ------------ |
+| `HTTP_PROXY` | 空字符串  | NO           |
+| `http_proxy` | 空字符串  | NO           |
+
+重试即可。
+
 ## 授权协议
 
 AGPLv3
