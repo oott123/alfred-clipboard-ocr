@@ -9,7 +9,8 @@
 ## 安装方法
 
 1. [下载 workflow](https://github.com/oott123/alfred-clipboard-ocr/releases) 并使用 Alfred 安装
-2. 去 [百度云控制台](https://console.bce.baidu.com/ai/#/ai/ocr/overview/index) 申请一个文字识别的应用，并记下 API Key 和 API Secret
+2. 去 [百度云控制台](https://console.bce.baidu.com/ai/#/ai/ocr/overview/index) 申请一个文字识别的应用，并记下 API Key 和 API Secret  
+   在这里需要顺便[领取免费资源](https://console.bce.baidu.com/ai/#/ai/ocr/overview/resource/getFree)，否则会遇到 API 额度不足的问题
 3. 打开 Alfred 设置，找到这个 workflow 并打开变量控制面板
    ![变量控制面板的位置](./assets/open-variables-panel.jpg)
 4. 将第二步中获得的 API Key 和 API Secret 填入对应的变量中
