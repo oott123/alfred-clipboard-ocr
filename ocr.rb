@@ -64,7 +64,7 @@ def ocr_text(image_base64, credentials)
 
   request = Net::HTTP::Post.new(url)
   request['content-type'] = 'application/x-www-form-urlencoded'
-  request.body = "image=#{image_base64_encoded}"
+  request.body = "language_type=auto_detect&image=#{image_base64_encoded}"
 
   response = http.request(request)
   data = JSON.load response.read_body
