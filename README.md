@@ -16,6 +16,12 @@
 4. 将第二步中获得的 API Key 和 API Secret 填入对应的变量中
    ![添加变量的示意图](./assets/set-variables.jpg)
 
+## Alter: 使用有道 AI 开放平台
+
+如果对于百度的隐私、资费等有问题，可以使用有道提供的 AI 开放平台。
+
+操作步骤与上面相同，选用 `OCR Clipboard YOUDAO.workflow`。到 https://ai.youdao.com/ 注册并申请通用文字识别服务，将 `key` 和 `secret` 填入对应变量即可。
+
 ## 使用说明
 
 首先，使用任意一个截图软件将想要识别的区域截取下来。你也可以复制图片内容（而非图片文件）到剪贴板中。
