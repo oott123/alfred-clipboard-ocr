@@ -1,6 +1,6 @@
 # Alfred Clipboard OCR
 
-一个对剪贴板中的图片内容调用百度云 API 做 OCR 识别的 Alfred 工作流。
+一个对剪贴板中的图片内容调用百度云 API 做 OCR 识别的 Alfred 工作流。不喜欢百度？试试[基于有道的同类工作流](https://github.com/baker221/alfred-clipboard-ocr-youdao)。
 
 ![演示动画](./assets/demo.gif)
 
